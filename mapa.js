@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             geometryName: 'geometry'
         }),
         loader: function(extent, resolution, projection, success, failure) {
-            const url = "http://localhost:5501/output_data/geojson/nucleos_urbanos.geojson";
+            const url = "./data/geojson/nucleos_urbanos.geojson";
             const xhr = new XMLHttpRequest();
             xhr.open('GET', url);
             xhr.onload = function() {
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     nucleosSource.loadFeatures(initialExtent, map.getView().getResolution(), map.getView().getProjection());
 
     const municipiosSource = new ol.source.Vector({
-        url: "http://localhost:5501/output_data/geojson/municipios.geojson",
+        url: "./data/geojson/municipios.geojson",
         format: new ol.format.GeoJSON({
             dataProjection: 'EPSG:3857',
             geometryName: 'geometry'
